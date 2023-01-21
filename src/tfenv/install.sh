@@ -4,6 +4,12 @@ VERSION=${VERSION:-undefined}
 
 set -e
 
+echo "The effective dev container remoteUser is '$_REMOTE_USER'"
+echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_HOME'"
+
+echo "The effective dev container containerUser is '$_CONTAINER_USER'"
+echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
+
 # Clean up
 rm -rf /var/lib/apt/lists/*
 
@@ -39,10 +45,10 @@ set -e
 if [ "$exit_code" != "0" ]; then
     echo "(!) tfenv version ${VERSION} failed to download. Try again later of a diffrent version."
 else
-    mkdir ~/.tfenv
-    tar -zxvf ${filename} -C ~/.tfenv
+    mkdir $_REMOTE_USER_HOME/.tfenv
+    tar -zxvf ${filename} -C $_REMOTE_USER_HOME/.tfenv
 
-    echo 'export PATH="$HOME/.tfenv/tfenv-'"${VERSION}"'/bin:$PATH"' >> ~/.bash_profile
+    echo 'export PATH="$HOME/.tfenv/tfenv-'"${VERSION}"'/bin:$PATH"' >> $_REMOTE_USER_HOME/.bash_profile
 fi
 
 popd
