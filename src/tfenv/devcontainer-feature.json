@@ -1,0 +1,19 @@
+{
+    "name": "tfenv",
+    "id": "tfenv",
+    "version": "0.0.1",
+    "description": "Installs the Terraform version manager",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "3.0.0"
+            ],
+            "default": "3.0.0",
+            "description": "Select version of the `tfenv`"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
