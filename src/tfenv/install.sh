@@ -42,7 +42,9 @@ else
     mkdir $_REMOTE_USER_HOME/.tfenv
     tar -zxvf ${filename} -C $_REMOTE_USER_HOME/.tfenv
 
-    echo 'export PATH="$HOME/.tfenv/tfenv-'"${VERSION}"'/bin:$PATH"' >> $_REMOTE_USER_HOME/.bash_profile
+    echo 'export PATH="$HOME/.tfenv/tfenv-'"${VERSION}"'/bin:$PATH"' >> $_REMOTE_USER_HOME/.bashrc
+
+    chown $_REMOTE_USER:$_REMOTE_USER -R $_REMOTE_USER_HOME/.tfenv
 fi
 
 popd
@@ -50,3 +52,5 @@ rm -rf /tmp/tfenv
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
+
+echo 'Done!'
