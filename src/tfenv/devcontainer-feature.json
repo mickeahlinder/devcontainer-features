@@ -1,7 +1,7 @@
 {
     "name": "tfenv",
     "id": "tfenv",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Installs the Terraform version manager",
     "options": {
         "version": {
@@ -10,7 +10,7 @@
                 "3.0.0"
             ],
             "default": "3.0.0",
-            "description": "Select version of the `tfenv`"
+            "description": "Select version of `tfenv` to install"
         }
     },
     "installsAfter": [
