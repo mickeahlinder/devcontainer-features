@@ -7,7 +7,7 @@ Installs the Terraform version manager
 
 ```json
 "features": {
-    "ghcr.io/mickeahlinder/devcontainer-features/tfenv:0": {}
+    "ghcr.io/mickeahlinder/devcontainer-features/tfenv:1": {}
 }
 ```
 
@@ -15,7 +15,7 @@ Installs the Terraform version manager
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Select version of the `tfenv` | string | 3.0.0 |
+| version | Select version of `tfenv` to install | string | 3.0.0 |
 
 
 
